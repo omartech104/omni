@@ -75,10 +75,6 @@ Use the **`config.py`** file to configure your API keys, local LLM settings, and
 ```python
 import os
 from pathlib import Path
-from dotenv import load_dotenv
-
-# Load environment variables from .env file
-load_dotenv()
 
 # Base directory paths
 BASE_DIR = Path(__file__).resolve().parent
