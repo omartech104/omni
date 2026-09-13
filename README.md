@@ -66,7 +66,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 
 3. **Install dependencies:**
 ```bash
-pip install textual rich httpx openai sqlmodel python-dotenv keyboard
+pip install -r requirements.txt
 ```
 
 
