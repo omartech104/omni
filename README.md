@@ -1,7 +1,3 @@
-Here is the updated README tailored to explicitly highlight how **`config.py`** manages your environment variables, application paths, and API settings:
-
----
-
 # Omni 🚀
 
 Omni is a modern, blazing-fast, and keyboard-driven terminal dashboard built in Python. It brings together your essential daily tools into a single interface—featuring real-time weather tracking, a task manager, a calendar agenda, and an AI-powered chatbot supporting both OpenRouter and local LLMs.
