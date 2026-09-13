@@ -70,19 +70,31 @@ pip install textual rich httpx openai sqlmodel python-dotenv keyboard
 ```
 
 
-4. **Configure `config.py` via `.env`:**
-Create a `.env` file in the root directory. **`config.py`** reads these variables to configure your keys and endpoints globally across all services:
-```env
+4. **Configure `config.py`:**
+Use the **`config.py`** file to configure your API keys, local LLM settings, and app preferences.
+```python
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
+
+# Base directory paths
+BASE_DIR = Path(__file__).resolve().parent
+DB_PATH = BASE_DIR / "db" / "omni.db"
+
 # API Keys & Endpoints
-OPENROUTER_API_KEY=your_openrouter_api_key_here
-WEATHER_API_KEY=your_weather_api_key_here
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 
-# Optional: Local LLM integration (e.g., Ollama/LM Studio)
-LOCAL_LLM_URL=http://localhost:11434/v1
-LOCAL_LLM_MODEL=llama3
+# LLM Configuration (Switch between OpenRouter or Local)
+LLM_PROVIDER = os.getenv("LLM_PROVIDER", "openrouter")  # "openrouter" or "local"
+LOCAL_LLM_URL = os.getenv("LOCAL_LLM_URL", "http://localhost:11434/v1")
+LOCAL_LLM_MODEL = os.getenv("LOCAL_LLM_MODEL", "llama3")
 
-# App Preferences
-DEFAULT_CITY=YourCityName
+# Default User Settings
+DEFAULT_CITY = os.getenv("DEFAULT_CITY", "Cairo")
 ```
 
 
