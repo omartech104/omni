@@ -4,3 +4,4 @@ openai
 httpx
 sqlmodel
 pendulum
+gcal-sync
