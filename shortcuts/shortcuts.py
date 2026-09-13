@@ -1,0 +1,1 @@
+# Omni's Shortcuts Module

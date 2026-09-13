@@ -1,0 +1,6 @@
+textual
+rich
+openai
+httpx
+sqlmodel
+pendulum
