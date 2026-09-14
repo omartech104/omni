@@ -16,4 +16,8 @@ LOCAL_LLM_URL = os.getenv("LOCAL_LLM_URL", "http://localhost:11434/v1")
 LOCAL_LLM_MODEL = os.getenv("LOCAL_LLM_MODEL", "llama3")
 
 # Default User Settings
-DEFAULT_CITY = os.getenv("DEFAULT_CITY", "Cairo")
+DEFAULT_CITY = "Cairo"
+DEFAULT_UNITS = "celsius"  # "celsius" or "imperial"
+
+# API URLs
+WEATHER_API_URL = f"https://api.openweathermap.org/data/2.5/weather?q={DEFAULT_CITY}&units={DEFAULT_UNITS}&appid={WEATHER_API_KEY}"
