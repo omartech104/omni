@@ -15,9 +15,17 @@ LLM_PROVIDER = os.getenv("LLM_PROVIDER", "openrouter")  # "openrouter" or "local
 LOCAL_LLM_URL = os.getenv("LOCAL_LLM_URL", "http://localhost:11434/v1")
 LOCAL_LLM_MODEL = os.getenv("LOCAL_LLM_MODEL", "llama3")
 
-# Default User Settings
+# Default User Weather Settings
 DEFAULT_CITY = "Cairo"
-DEFAULT_UNITS = "celsius"  # "celsius" or "imperial"
+DEFAULT_UNITS = "metric"  # "metric" or "imperial"
+
+# User Weather Settings
+CITY =  DEFAULT_CITY # Change to your preferred city
+UNITS = DEFAULT_UNITS # Change to your preferred units
+
 
 # API URLs
-WEATHER_API_URL = f"https://api.openweathermap.org/data/2.5/weather?q={DEFAULT_CITY}&units={DEFAULT_UNITS}&appid={WEATHER_API_KEY}"
+
+# GEOCODE_API_URL = "https://openstreetmap.org{city_name}&format=json&limit=1"
+# WEATHER_API_URL = "https://open-meteo.com{lat}&longitude={lon}&current=temperature_2m,weather_code"
+WEATHER_API_URL = "https://wttr.in/{city_name}?format=j1"
