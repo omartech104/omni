@@ -1,9 +1,6 @@
-import httpx
-import config
-import ui
-import httpx
-import config
 import urllib.parse
+import httpx
+import config
 
 def fetch_weather_data() -> dict:
     """Fetches text weather data cleanly using the wttr.in engine."""
@@ -24,14 +21,16 @@ def fetch_weather_data() -> dict:
 
             return {
                 "name": target_city.title(),
-                "temp": float(current["temp_C"]),                # Natively formatted to Celsius string
-                "condition": current["weatherDesc"][0]["value"]  # Clear text name like "Sunny" or "Overcast"
+                "temp": float(current["temp_C"]),
+                "condition": current["weatherDesc"][0]["value"]
             }
 
     except Exception as e:
         return {"name": target_city, "temp": 0.0, "condition": "Error", "error": str(e)}
 
-
 if __name__ == "__main__":
+    import ui
+    result = fetch_weather_data()
+    print(result)
     weatherapplet = ui.WeatherApp()
     weatherapplet.run()

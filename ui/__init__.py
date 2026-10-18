@@ -6,6 +6,6 @@ dashboard (and eventually other UI components).
 """
 
 # Re‑export the primary app class for convenient imports
-from .app import WeatherApp
+from .app import WeatherApp, OmniChatApp
 
-__all__ = ["WeatherApp"]
+__all__ = ["WeatherApp", "OmniChatApp"]
